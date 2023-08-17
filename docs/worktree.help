@@ -1,0 +1,114 @@
+NAME
+    worktree - Automating Git Worktree workflow
+
+NAME
+    modules
+
+DATA
+    discard = ['HEAD', 'master', 'main']
+
+FUNCTIONS
+
+    create_worktree(repo, message, path, branch)
+        Objective:
+            Creating Git Worktree
+        Parameters:
+            repo (object): Git Repository
+            message (str): Commit Message
+            path (str): Path to Git Repository
+            branch (str): Git Branch
+        Returns:
+            True/False (bool)
+    
+    destroy_worktree(branch)
+        Objective:
+            Destroying Git Worktree
+        Parameters:
+            branch (str): Git Branch
+        Returns:
+            True/False (bool)
+    
+    display_help(parser)
+        Objective:
+            Displaying Help
+        Parameters:
+            None
+        Returns:
+            True (bool)
+    
+    display_message(heading=False, message='')
+        Objective:
+            Display custom (heading: message)
+        Parameters:
+            heading (str): Message heading (default: False)
+            message (str): Message body/content
+        Returns:
+            True (bool)
+    
+    display_section(character='-', length=100)
+        Objective:
+            Display sequence of character times length
+        Parameters:
+            string (str): Divisor character
+            length (int): Length of divisor
+        Returns:
+            True (bool)
+    
+    display_warning(message)
+        Objective:
+            Display warning message
+        Parameters:
+            message (str): Message body/content
+        Returns:
+            True (bool)
+    
+    extract_value(text, discard, index, pattern='/')
+        Objective:
+            Splits key/pair set and return its value
+        Parameters:
+            text (str): Key/Pair set
+            discard (list): List of values to be discarded
+            pattern (str): Pattern to be used to split key/pair set
+            index (int): Index of value to be extracted
+        Returns:
+            value (str): Extracted value
+    
+    inspect_worktree(repo, path)
+        Objective:
+            Inspecting Worktree
+        Parameters:
+            repo (object): Git Repository
+            path (str): Path to Git Repository
+        Returns:
+            True/False (bool)
+    
+    is_git_repo(path)
+        Objective:
+            Validates if path is a git repository
+        Reference:
+            https://stackoverflow.com/questions/19687394/
+            python-script-to-determine-if-a-directory-is-a-git-repository
+        Parameters:
+            path (str): Path to Git Repository
+        Returns:    
+            True/False (bool)
+
+    manage_worktree()
+        Objective:
+            Creating and Destroying Git Worktrees
+        Parameters:
+            None
+        Returns:
+            True/False (bool)
+
+    user_input() -> object
+        Objective:
+            Processing User-Input parameters
+        Parameters:
+            None
+        Returns:
+            args (object): User-Input parameters
+
+FILE
+
+    github-workflows/app/worktree.py

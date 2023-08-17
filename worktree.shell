@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+function setup_worktree () {
+    ## tracking_process ${FUNCNAME} "${@}";
+    oIFS="${IFS}" ;
+    for xitem in "${@}"; do
+      IFS='='; set `echo -e "${xitem}" | sed -e '1s|^\(-\)\{1,\}||'`
+      #### ---------------------------------------------------------------------
+      [[ ${1#*\--} = "git-repo" ]] && export git_repo="${2}" ;
+      [[ ${1#*\--} = "create" ]] && export create_worktree="${2}" ;
+      [[ ${1#*\--} = "destroy" ]] && export destroy_worktree="${2}" ;
+      #### ---------------------------------------------------------------------
+      [[ ${1#*\--} = "interactive" ]] && export interactive_mode='true' ;
+      ## [[ ${1#*\--} = "dry-run" ]] && export dry_run="${2}" ;
+      [[ ${1#*\--} = "verbose" ]] && export verbose='true' ;
+      [[ ${1#*\--} = "help" ]] && export display_help='true' ;
+    done; IFS="${oIFS}" ;
+    #### -----------------------------------------------------------------------
+    [[ ${#interactive_mode} -eq 0 ]] && export interactive_mode='false' ;
+    ## [[ ${#dry_run} -eq 0 ]] && export dry_run='false' ;
+    [[ ${#verbose} -eq 0 ]] && export verbose='false' ;
+    #### -----------------------------------------------------------------------
+    [[ ( ${#git_repo} -eq 0 ) || ( ${git_repo} == '.' ) ]] && { export git_repo="$(pwd)" ; } ;
+    ## Capturing the current directory
+    local original_location="$(pwd 1>/dev/null)" ;
+    ## If the git repository exists
+    if [[ -d ${git_repo} ]] ; then
+      cd ${git_repo} 1>/dev/null ;
+      echo -e ;
+      ## Fetching all remote branches
+      git fetch --verbose -- origin 1>/dev/null ;
+      ## echo $? ; ## 0 = success, 1 = failure
+      ## Fetching all remote branches
+      declare -a branches=($(
+          git branch -r \
+            | egrep -v "^(.*)\/HEAD -> (.*)$|^(.*)\/master(.*)$" \
+            | cut -d'/' -f2
+        )) ;
+      for branch in ${branches[@]} ; do
+        echo -e ;
+        local container=".worktrees/${branch}" ;
+        ## Creating directory structure
+        mkdir -p ${container} 1>/dev/null ;
+        ## Creating the Git Worktree
+        git worktree add ${container} ${branch} 2>/dev/null ;
+        ## echo $? ; ## 0 = success, 128 = already exists
+        # cd ${container} 1>/dev/null ;
+        # git status && cd - 1>/dev/null ;
+      done ;
+      echo -e ;
+      git worktree list | sed -e "s|${HOME}|~|g" ;
+    fi ;
+    ## Returning to the original directory
+    cd ${original_location} 1>/dev/null ;
+    echo -e ;
+    return 0;
+  }; alias setup-worktree='setup_worktree';
+
+setup_worktree "${@}" ;

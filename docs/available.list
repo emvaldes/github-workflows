@@ -1,0 +1,102 @@
+
+Please wait a moment while I gather a list of all available modules...
+
+test_sqlite3: testing with version '2.6.0', sqlite_version '3.42.0'
+IPython             _weakrefset         hashlib             readline
+__future__          _xxsubinterpreters  heapq               reprlib
+__hello__           _xxtestfuzz         hmac                resource
+__phello__          _yaml               html                rlcompleter
+_abc                _zoneinfo           http                ruff
+_aix_support        abc                 idlelib             runpy
+_ast                aifc                imaplib             sched
+_asyncio            antigravity         imghdr              secrets
+_bisect             appnope             imp                 select
+_blake2             argparse            importlib           selectors
+_bootsubprocess     array               iniconfig           setuptools
+_bz2                ast                 inspect             shelve
+_cffi_backend       asttokens           io                  shlex
+_codecs             asynchat            ipaddress           shutil
+_codecs_cn          asyncio             ipykernel           signal
+_codecs_hk          asyncore            ipykernel_launcher  site
+_codecs_iso2022     atexit              itertools           sitecustomize
+_codecs_jp          attr                jedi                six
+_codecs_kr          attrs               json                smmap
+_codecs_tw          audioop             jupyter             smtpd
+_collections        backcall            jupyter_client      smtplib
+_collections_abc    base64              jupyter_core        sndhdr
+_compat_pickle      bdb                 keyword             socket
+_compression        binascii            ldns                socketserver
+_contextvars        bisect              ldnsx               sqlite3
+_crypt              builtins            lib2to3             sre_compile
+_csv                bz2                 linecache           sre_constants
+_ctypes             cProfile            locale              sre_parse
+_ctypes_test        calendar            logging             ssl
+_curses             certifi             lzma                stack_data
+_curses_panel       cffi                mailbox             stat
+_datetime           cgi                 mailcap             statistics
+_dbm                cgitb               marshal             string
+_decimal            chunk               math                stringprep
+_distutils_hack     cmath               matplotlib_inline   struct
+_elementtree        cmd                 mimetypes           subprocess
+_functools          code                mmap                sunau
+_hashlib            codecs              modulefinder        symtable
+_heapq              codeop              modules             sys
+_imp                collections         multiprocessing     sysconfig
+_io                 colorsys            nest_asyncio        syslog
+_json               comm                netrc               tabnanny
+_ldns               compileall          nis                 tarfile
+_locale             concurrent          nntplib             telnetlib
+_lsprof             configparser        ntpath              tempfile
+_lzma               contextlib          nturl2path          termios
+_markupbase         contextvars         numbers             test
+_md5                copy                opcode              textwrap
+_multibytecodec     copyreg             openpyxl            this
+_multiprocessing    coverage            operator            threading
+_opcode             coverage_badge      optparse            time
+_operator           crypt               os                  timeit
+_osx_support        cryptography        packaging           tkinter
+_pickle             csv                 parso               token
+_posixshmem         ctypes              pathlib             tokenize
+_posixsubprocess    curses              pdb                 tomllib
+_py_abc             dataclasses         pexpect             tornado
+_pydecimal          datetime            pickle              trace
+_pyio               dateutil            pickleshare         traceback
+_pytest             dbm                 pickletools         tracemalloc
+_queue              debugpy             pip                 traitlets
+_random             decimal             pipes               tty
+_scproxy            decorator           pkg_resources       turtle
+_sha1               difflib             pkgutil             turtledemo
+_sha256             dis                 platform            types
+_sha3               distutils           platformdirs        typing
+_sha512             doctest             plistlib            unicodedata
+_signal             docutils            pluggy              unittest
+_sitebuiltins       email               poplib              urllib
+_socket             encodings           posix               uu
+_sqlite3            ensurepip           posixpath           uuid
+_sre                enum                pprint              venv
+_ssl                errno               profile             warnings
+_stat               et_xmlfile          prompt_toolkit      wave
+_statistics         executing           pstats              wcwidth
+_string             faulthandler        psutil              weakref
+_strptime           fcntl               pty                 webbrowser
+_struct             filecmp             ptyprocess          wheel
+_symtable           fileinput           pure_eval           wsgiref
+_sysconfigdata__darwin_darwin fnmatch             pwd                 xdrlib
+_testbuffer         fractions           py                  xml
+_testcapi           ftplib              py_compile          xmlrpc
+_testclinic         functools           pyclbr              xxlimited
+_testimportmultiple gc                  pycparser           xxlimited_35
+_testinternalcapi   genericpath         pydoc               xxsubtype
+_testmultiphase     getopt              pydoc_data          yaml
+_thread             getpass             pyexpat             zipapp
+_threading_local    gettext             pygments            zipfile
+_tokenize           git                 pytest              zipimport
+_tracemalloc        gitdb               pytest_cov          zlib
+_typing             glob                queue               zmq
+_uuid               graphlib            quopri              zoneinfo
+_warnings           grp                 random              
+_weakref            gzip                re                  
+
+Enter any module name to get more help.  Or, type "modules spam" to search
+for modules whose name or summary contain the string "spam".
+
